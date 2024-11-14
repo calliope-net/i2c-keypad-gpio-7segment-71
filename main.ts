@@ -1,10 +1,16 @@
 function toByte (A: number, B: number, C: number, D: number, E: number, F: number, G: number) {
     byte = 0
+    byte += A * 1
+    byte += B * 2
+    byte += C * 4
+    byte += D * 8
+    byte += E * 16
+    byte += F * 32
+    byte += G * 64
 }
 pins.onKeyboardEvent(function (zeichenCode, zeichenText, isASCII) {
-    if (pins.between(zeichenCode, 48, 57)) {
-        select(zeichenCode - 48)
-    }
+    select(zeichenCode - 48)
+    qwiicgpio.writeOUTPUT_PORT(qwiicgpio.qwiicgpio_eADDR(qwiicgpio.eADDR.GPIO_x26), byte)
 })
 function select (Zahl: number) {
     if (Zahl == 0) {
@@ -54,9 +60,9 @@ function Ziffer (A: number, B: number, C: number, D: number, E: number, F: numbe
     pins.digitalWritePin(DigitalPin.C11, 0)
 }
 let byte = 0
-qwiicgpio.beimStart(qwiicgpio.qwiicgpio_eADDR(qwiicgpio.eADDR.GPIO_x27))
+qwiicgpio.beimStart(qwiicgpio.qwiicgpio_eADDR(qwiicgpio.eADDR.GPIO_x26))
 qwiicgpio.setMode(
-qwiicgpio.qwiicgpio_eADDR(qwiicgpio.eADDR.GPIO_x27),
+qwiicgpio.qwiicgpio_eADDR(qwiicgpio.eADDR.GPIO_x26),
 qwiicgpio.eIO.OUT,
 qwiicgpio.eIO.OUT,
 qwiicgpio.eIO.OUT,
