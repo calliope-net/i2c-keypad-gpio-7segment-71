@@ -49,6 +49,12 @@ function select (Zahl: number) {
         toByte(0, 0, 0, 0, 0, 0, 1)
     }
 }
+function Konfiguration () {
+    pins.comment(pins.pins_text("i2c-keypad-gpio-7segment-71"))
+    pins.comment(pins.pins_text("2 Erweiterungen"))
+    pins.comment(pins.pins_text("calliope-net/gpio"))
+    pins.comment(pins.pins_text("calliope-net/pins"))
+}
 function Ziffer (A: number, B: number, C: number, D: number, E: number, F: number, G: number) {
     pins.digitalWritePin(DigitalPin.C4, 1 - A)
     pins.digitalWritePin(DigitalPin.C5, 1 - B)
