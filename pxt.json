@@ -5,8 +5,7 @@
         "core": "*",
         "v1": "*",
         "gpio": "github:calliope-net/gpio#v2.0.1",
-        "pins": "github:calliope-net/pins#v1.0.1",
-        "basic": "github:calliope-net/basic#v0.0.4"
+        "pins": "github:calliope-net/pins#v1.0.1"
     },
     "files": [
         "main.blocks",
